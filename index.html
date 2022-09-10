@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="Ragul Adhithya M">
+	<meta name="description" content="An online EB bill calculator">
+	<title>EB bill calculator</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="shortcut icon" type="image/jpg" href="favicon.jpg">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css"/>
+</head>
+<body>
+<div class="container-fluid">
+	<marquee width="100%" behavior="alternate" style="padding: 20px; font-size: large; font-weight: bold;">  
+BSES BILL CALCULATOR. To know more about bses <a href="https://www.bsesdelhi.com/web/bses" target="_blank" style="color: black; cursor: pointer;">Click Here</a> 
+</marquee> 
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3 reducedCol well text-center">
+      <form action="#box" role="form" name="elecForm" class="form">
+        <fieldset class="form-group form-inline">
+          <label for="curr">Current Reading</label> <input class="form-control inp" name="curr" type="number" value="" placeholder="Units in kWh" style="color: red;">
+          <label for="prev">Previous Reading</label> <input class="form-control inp" name="prev" type="" value="" placeholder="Units in kWh" style="color: red;">
+        </fieldset>
+        <fieldset class="form-group form-inline">
+          <label for="startDate">Start Date</label>
+          <input class="form-control inp" name="startDate" type="date" style="color: darkred;">
+          <label for="endDate">End Date</label>
+          <input class="form-control inp" name="endDate" type="date" style="color: darkred;">
+        </fieldset> 
+        <fieldset class="form-group form-inline">
+          <label for="sancLoad">Sanctioned Load</label>
+          <select class="form-control inp" name="sancLoad" style="color: red;">
+            <option>2 kW</option>
+            <option>>2-5 kW</option>
+          </select>
+        </fieldset>
+        <fieldset class="form-group">
+          <button class="btn bg-primary getButton" type="button" onClick="calcBill(this.form)">Get Bill</button>
+        </fieldset>
+      </form>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-4">
+      <div class="box text-responsive" id="#box">
+        <center>
+          <h2>Bill : </h2><span class="change" id="change"></span></center>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script type="text/javascript" src="design.js"></script>
+</body>
+</html>
